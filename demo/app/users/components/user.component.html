@@ -1,0 +1,30 @@
+<h3>User Name: <strong>{{ user.attributes.name }}</strong></h3>
+<br>
+<!-- <pre>users.get('{{ user.id }}', {{ '{' }} include: ['books', 'photos'] {{ '}' }});</pre> -->
+<ul>
+    <li>User ID  #{{ user.id }}</li>
+</ul>
+<br>
+<br>
+
+<!-- <h4>Articles</h4>
+<table class="table table-striped" *ngIf="user.relationships.articles">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Date Published</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let article of user.relationships.articles.data">
+        <td>{{ article.id }}</td>
+        <td>
+            <a [routerLink]="['/articles', article.id]">{{ article.attributes.title }}</a>
+        </td>
+        <td>{{ article.attributes.date_published | date }}</td>
+    </tr>
+</table> -->
+
+<p>
+    <a routerLink="/users">Check All Users</a>
+</p>

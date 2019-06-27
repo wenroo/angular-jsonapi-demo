@@ -6,29 +6,29 @@ import { environment } from '../environments/environment';
 import { NgxJsonapiModule } from 'ngx-jsonapi';
 
 import { AppComponent } from './app.component';
-import { AuthorsService } from './authors/authors.service';
-import { BooksService } from './books/books.service';
-import { PhotosService } from './photos/photos.service';
+
+import { UsersService } from './users/users.service';
+import { ArticlesService } from './articles/articles.service';
 import { SharedModule } from './shared/shared.module';
 
 const appRoutes: Routes = [
     {
         path: '',
-        redirectTo: '/authors',
+        redirectTo: '/articles',
         pathMatch: 'full'
     },
     {
-        path: 'authors',
-        loadChildren: './authors/authors.module#AuthorsModule'
+        path: 'users',
+        loadChildren: './users/users.module#UsersModule'
     },
     {
-        path: 'books',
-        loadChildren: './books/books.module#BooksModule'
+        path: 'articles',
+        loadChildren: './articles/articles.module#ArticlesModule'
     }
 ];
 
 @NgModule({
-    providers: [AuthorsService, BooksService, PhotosService],
+    providers: [UsersService, ArticlesService],
     imports: [
         BrowserModule,
         HttpClientModule,
