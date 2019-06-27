@@ -35,7 +35,9 @@ const appRoutes: Routes = [
         SharedModule,
         RouterModule.forRoot(appRoutes, { useHash: true }),
         NgxJsonapiModule.forRoot({
-            url: environment.jsonapi_url
+            url: environment.jsonapi_url,
+            cache_prerequests: true,
+            cachestore_support: true
         })
     ],
     declarations: [AppComponent],

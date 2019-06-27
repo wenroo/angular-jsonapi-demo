@@ -12,6 +12,8 @@ export class AppComponent /* implements OnInit */ {
     public constructor(
         private jsonapiCore: JsonapiCore
     ) {
+
+    // console.log(this)
         jsonapiCore.loadingsStart = (): void => {
             this.loading = 'LOADING...';
         };
@@ -25,4 +27,5 @@ export class AppComponent /* implements OnInit */ {
             this.loading = 'No connection 2!!!';
         };
     }
+
 }
