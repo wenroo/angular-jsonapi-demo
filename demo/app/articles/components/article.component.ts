@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Resource } from 'ngx-jsonapi';
-import { UsersService } from '../../users/users.service';
 import { ArticlesService, Article } from './../articles.service';
 
 @Component({
@@ -12,7 +11,6 @@ export class ArticleComponent {
     public article: Article;
 
     public constructor(
-        protected usersService: UsersService,
         protected articlesService: ArticlesService,
         private route: ActivatedRoute
     ) {

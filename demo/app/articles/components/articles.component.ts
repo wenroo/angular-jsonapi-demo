@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Resource, DocumentCollection } from 'ngx-jsonapi';
 import { ArticlesService, Article } from './../articles.service';
-import { UsersService } from './../../users/users.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,19 +12,25 @@ export class ArticlesComponent {
 
     public constructor(
         private route: ActivatedRoute,
-        protected usersService: UsersService,
         protected articlesService: ArticlesService
     ) {
+
         route.queryParams.subscribe(({ page }) => {
             articlesService
                 .all({
-                    page: { number: page || 1 }
+                    page: { number: page || 1 },
+                    ttl: 20
                 })
                 .subscribe(articles => {
                     this.articles = articles;
                     console.info('success articles controll', this.articles);
                 }, (error): void => console.info('error articles controll', error));
         });
+
+    }
+
+    public nonCache(){
+        this.articlesService.ttl = 0
     }
 
     public getAll(remotefilter) {

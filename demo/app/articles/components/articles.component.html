@@ -3,7 +3,6 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Title</th>
             <th>Is Published</th>
             <th>Date updated</th>
@@ -11,7 +10,6 @@
     </thead>
     <!-- Use user example. @deprected since version 2.0.0 -->
     <tr *ngFor="let article of articles.data">
-        <td>{{ article.id }}</td>
         <td>
             <a [routerLink]="['/articles', article.id]">{{ article.attributes.title }}</a>
         </td>

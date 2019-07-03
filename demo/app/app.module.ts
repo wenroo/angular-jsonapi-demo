@@ -7,7 +7,7 @@ import { NgxJsonapiModule } from 'ngx-jsonapi';
 
 import { AppComponent } from './app.component';
 
-import { UsersService } from './users/users.service';
+import { TagsService } from './tags/tags.service';
 import { ArticlesService } from './articles/articles.service';
 import { SharedModule } from './shared/shared.module';
 
@@ -18,17 +18,17 @@ const appRoutes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: 'users',
-        loadChildren: './users/users.module#UsersModule'
-    },
-    {
         path: 'articles',
         loadChildren: './articles/articles.module#ArticlesModule'
+    },
+    {
+        path: 'tags',
+        loadChildren: './tags/tags.module#TagsModule'
     }
 ];
 
 @NgModule({
-    providers: [UsersService, ArticlesService],
+    providers: [ArticlesService,TagsService],
     imports: [
         BrowserModule,
         HttpClientModule,

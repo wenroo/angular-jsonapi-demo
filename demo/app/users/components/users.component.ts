@@ -14,7 +14,6 @@ export class UsersComponent {
         route.queryParams.subscribe(({ page }) => {
             usersService
                 .all({
-                    // include: ['books', 'photos'],
                     sort: ['name'],
                     page: { number: page || 1 },
                     ttl: 3600
